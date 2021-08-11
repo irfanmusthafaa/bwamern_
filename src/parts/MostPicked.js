@@ -13,10 +13,8 @@ export default function MostPicked(props) {
             return (
               <div
                 key={`mostPicked-${index}`}
-                className={`item column-4${index === 0 ? " row-2" : " row-1"}`}
-              >
-           
-             
+                className={`item column-4${index === 0 ? " row-2" : " row-1"}`}>
+        
                 <div className="card card-featured">
                     <div className="tag">
                       ${item.price}
@@ -24,7 +22,7 @@ export default function MostPicked(props) {
                     </div>
                     <figure className="img-wrapper">
                       <img
-                        src={item.imageUrl}
+                        src={item.imageId[0] ? `${process.env.REACT_APP_HOST}/${item.imageId[0].imageUrl}` : ""}
                         alt={item.name}
                         className="img-cover"
                       />
@@ -35,7 +33,7 @@ export default function MostPicked(props) {
                         className="stretched-link d-block text-white"
                         href={`/properties/${item._id}`}
                       >
-                        <h5>{item.name}</h5>
+                        <h5>{item.title}</h5>
                       </Button>
                       <span>
                         {item.city}, {item.country}

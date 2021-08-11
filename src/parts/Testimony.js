@@ -13,7 +13,10 @@ export default function Testimony({ data }) {
                     <div className="testimonial-hero" style={{ margin: `30px 0 0 30px`}}>
 
                     <img src={TestimonyAccent} alt="Testimonial frame" className="position-absolute" style={{ margin: `-30px 0 0 -30px` }} />
-                        <img src={data.imageUrl} alt="Testimonial" className="position-absolute" style={{ zindex: 1 }} />
+                        <img src={`${process.env.REACT_APP_HOST}/${data.imageUrl}`} 
+                             alt="Testimonial" 
+                            className="position-absolute" 
+                            style={{ zindex: 1 }} />
                        
                     </div>
                 </div>
